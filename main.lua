@@ -1,7 +1,13 @@
-salary = 1000
-food = 300
-rent = 400
-investment = 600
-result = salary - (rent + food + investment)     -- This calculates our financial situation
+local STI = require("sti")
 
-print(result)
+function love.load()
+    Map = STI("Map/1.lua")
+end
+
+function love.update(dt)
+
+end
+
+function love.draw()
+    Map:
+end
