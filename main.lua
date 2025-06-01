@@ -1,7 +1,10 @@
 local STI = require("sti")
 
 function love.load()
-    Map = STI("Map/1.lua")
+    Map = STI("map/1.lua", {"box2d"})
+    World = love.physics.newWorld(0,0)
+    Map:box2d_init(World)
+    Map.layers.solid.visible = false
 end
 
 function love.update(dt)
@@ -9,5 +12,8 @@ function love.update(dt)
 end
 
 function love.draw()
-    Map:
+    Map:draw(0, 0, 2, 2)
+    love.graphics.push()
+    love.graphics.scale(2, 2)
+    love.graphics.pop()
 end
